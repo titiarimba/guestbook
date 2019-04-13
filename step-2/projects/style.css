@@ -1,0 +1,38 @@
+.pane {
+  padding: 2rem;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.pane .pane-row {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.pane .pane-text {
+  width: 120px;
+}
+.pane .pane-input {
+  width: 100%;
+}
+input[type=text],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
