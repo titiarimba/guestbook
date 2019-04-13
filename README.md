@@ -12,8 +12,8 @@ This project only available on Indonesian language, so if you want to read it on
 
 - [Bagian 1 - HTML](step-1/README.md)
 - [Bagian 2 - HTML & CSS](step-2/README.md)
-- [Bagian 3 - HTML, CSS & PHP](step-3/README.md)
-- [Bagian 4 - HTML, CSS, PHP & MySQL](step-4/README.md)
+- [Bagian 3 - HTML & CSS Framework](step-3/README.md)
+- [Bagian 4 - HTML, CSS Framework & PHP](step-4/README.md)
 
 ### Tentang
 
