@@ -1,5 +1,5 @@
-# Bagian 1
+# Bagian 3
 
 > [Demo Here](./projects/index.html)
 
-> Introduce HTML
+> JavaScript as Client

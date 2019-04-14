@@ -49,4 +49,3 @@
     // Prevent null filled data
     header('location:index.php');
   }
-?>

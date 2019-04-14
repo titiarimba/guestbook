@@ -2,4 +2,4 @@
 
  > [Demo Here](./projects/index.html)
 
-> HTML & CSS Framework
+> Using CSS Framework on HTML
