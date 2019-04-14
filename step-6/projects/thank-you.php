@@ -23,7 +23,6 @@
           <!-- PHP Process -->
           <?php
             if ($_GET['id']) {
-
               $connection = new mysqli(
                 'localhost', // Database Host
                 'root', // Database User
@@ -36,7 +35,7 @@
                 die("Connection failed: " . $connection->connect_error);
               }
   
-              $query = "SELECT * FROM messages ORDER BY id DESC LIMIT 1";
+              $query = "SELECT * FROM messages WHERE id = ".$_GET['id'];
   
               $result = mysqli_query($connection, $query);
   

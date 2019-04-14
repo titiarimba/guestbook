@@ -17,6 +17,7 @@ This project only available on Indonesian language, so if you want to read it on
 - [Step 5 - Processing Form with external actions (PHP)](step-5/README.md)
 - [Step 6 - Processing Form with MySQL Database (PHP)](step-6/README.md)
 - [Step 7 - JavaScript as Client](step-7/README.md)
+- [Step 8 - Processing Form with JavaScript and PHP](step-8/README.md)
 
 ### Tentang
 
