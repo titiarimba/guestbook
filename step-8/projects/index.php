@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form action="process.php" method="POST" class="form-horizontal">
+            <form action="#" class="form-horizontal">
               <!-- form input control -->
               <div class="form-group">
                 <label class="form-label" for="input-name">
@@ -76,6 +76,19 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const form = document.querySelector('form')
+    const name = document.querySelector('[name="name"]')
+    const phone = document.querySelector('[name="phone"]')
+    const message = document.querySelector('[name="message"]')
+    const output = document.querySelector('#output')
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault()
+      console.log(name.value, phone.value, message.value)
+    }, false)
+  </script>
 </body>
 </html>
 
@@ -88,13 +101,13 @@
     </div>
     <!-- Of course, you can use PHP tag inside a div like this -->
     <p class="empty-title h5">
-    Hi, <?php echo "{$row['name']} ({$row['phone']})"; ?>.
+    Hi, <?php// echo "{$row['name']} ({$row['phone']})"; ?>.
     </p>
     <p class="empty-subtitle">
       Your message has been submited with detail :
     </p>
     <p class="empty-subtitle">
-      <?php echo $row['message']; ?>
+      <?php// echo $row['message']; ?>
     </p>
     <div class="empty-action">
       <a href="index.php" class="btn btn-primary">
