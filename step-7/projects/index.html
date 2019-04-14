@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form class="form-horizontal">
+            <form action="#" class="form-horizontal">
               <!-- form input control -->
               <div class="form-group">
                 <label class="form-label" for="input-name">
@@ -71,10 +71,29 @@
                 </button>
               </div>
             </form>
+            <div id="output"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    const form = document.querySelector('form')
+    const name = document.querySelector('[name="name"]')
+    const phone = document.querySelector('[name="phone"]')
+    const message = document.querySelector('[name="message"]')
+    const output = document.querySelector('#output')
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault()
+      output.innerHTML = ""
+        + "<hr>"
+        + "Hi " + name.value + " (" + phone.value + "),"
+        + "<br>"
+        + "Your message has been submited with detail :"
+        + "<pre>" + message.value + "</pre>"
+    }, false)
+  </script>
 </body>
 </html>
