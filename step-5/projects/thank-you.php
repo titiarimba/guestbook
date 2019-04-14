@@ -21,7 +21,7 @@
             // var_dump($_POST);
 
             // Detect if form submited
-            if (isset($_POST['name'])) {
+            if (!empty($_POST['name'])) {
               // Extract content from URL
               $name = $_POST['name'];
               $phone = $_POST['phone'];
@@ -60,6 +60,9 @@
               </div>              
             </div>
           <?php
+            } else {
+              // Prevent null filled data
+              header('location:index.php');
             }
           ?>
         </div>
