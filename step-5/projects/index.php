@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form action="" method="POST" class="form-horizontal">
+            <form action="thank-you.php" method="POST" class="form-horizontal">
               <!-- form input control -->
               <div class="form-group">
                 <label class="form-label" for="input-name">
@@ -71,30 +71,6 @@
                 </button>
               </div>
             </form>
-
-            <hr>
-
-            <!-- PHP Process -->
-            <?php
-              // Detect if form submited
-              if (isset($_POST['name'])) {
-                // Extract content from URL
-                $name = $_POST['name'];
-                $phone = $_POST['phone'];
-                $message = $_POST['message'];
-
-                // Print current guest message, with description :
-                // ----
-                // First, you can print variable inside a string if you use double quote (")
-                echo "Hi $name ($phone),";
-                // Second, you can HTML tag inside PHP like this
-                echo "<br>";
-                // Or, you can print string only
-                echo "Your message has been submited with detail :";
-                // Also, you can use HTML tag inside print function
-                echo "<pre>$message</pre>";
-              }
-            ?>
           </div>
         </div>
       </div>
