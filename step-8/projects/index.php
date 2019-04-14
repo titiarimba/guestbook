@@ -19,7 +19,7 @@
             <div class="card-title h5">
               Guest Book
             </div>
-            <div class="card-subtitle text-gray">
+            <div class="card-subtitle text-gray" id="greeting">
               Hi, welcome. Please fill the forms below.
             </div>
           </div>
@@ -71,6 +71,7 @@
                 </button>
               </div>
             </form>
+            <div id="output"></div>
           </div>
         </div>
       </div>
@@ -82,37 +83,77 @@
     const name = document.querySelector('[name="name"]')
     const phone = document.querySelector('[name="phone"]')
     const message = document.querySelector('[name="message"]')
+    const greeting = document.querySelector('#greeting')
     const output = document.querySelector('#output')
+
+    let content = ''
+
+    function request(url, data) {
+      return fetch(url, {
+        method: 'POST',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(function (response) {
+        return response.json()
+      })
+    }
 
     form.addEventListener('submit', function(event) {
       event.preventDefault()
-      console.log(name.value, phone.value, message.value)
+      
+      request('./process.php', {
+        action: 'create',
+        name: name.value,
+        phone: phone.value,
+        message: message.value
+      }).then(function ({ id }) {
+        
+        request('./process.php', {
+          action: 'select',
+          id: id
+        }).then(function ({ name, phone, message }) {
+          form.style.display = 'none'
+          greeting.style.display = 'none'
+
+          if (name && phone && message) {
+            content = ''
+              + '    <p class="empty-title h5">'
+              + '    Hi, ' + name + ' (' + phone + ').'
+              + '    </p>'
+              + '    <p class="empty-subtitle">'
+              + '      Your message has been submited with detail :'
+              + '    </p>'
+              + '    <p class="empty-subtitle">'
+              + '      ' + message
+              + '    </p>'
+          } else {
+            content = ''
+              + '    <p class="empty-subtitle">'
+              + '      No data found'
+              + '    </p>'
+          }
+
+          output.innerHTML = ''
+            + '<div class="card-body">'
+            + '  <div class="empty">'
+            + '    <div class="empty-icon">'
+            + '      <i class="icon icon-people"></i>'
+            + '    </div>'
+            +       content
+            + '    <div class="empty-action">'
+            + '      <a href="" class="btn btn-primary">'
+            + '        Back to Home'
+            + '      </a>'
+            + '    </div>'
+            + '  </div>'
+            + '</div>'
+        })
+      })
     }, false)
   </script>
 </body>
 </html>
-
-<!-- Backup -->
-<div class="card-body">
-  <!-- And print a message like this -->
-  <div class="empty">
-    <div class="empty-icon">
-      <i class="icon icon-people"></i>
-    </div>
-    <!-- Of course, you can use PHP tag inside a div like this -->
-    <p class="empty-title h5">
-    Hi, <?php// echo "{$row['name']} ({$row['phone']})"; ?>.
-    </p>
-    <p class="empty-subtitle">
-      Your message has been submited with detail :
-    </p>
-    <p class="empty-subtitle">
-      <?php// echo $row['message']; ?>
-    </p>
-    <div class="empty-action">
-      <a href="index.php" class="btn btn-primary">
-        Back to Home
-      </a>
-    </div>
-  </div>              
-</div>
