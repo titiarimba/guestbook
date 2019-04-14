@@ -15,6 +15,7 @@ This project only available on Indonesian language, so if you want to read it on
 - [Bagian 3 - HTML & CSS Framework](step-3/README.md)
 - [Bagian 4 - Processing Form in single page (PHP)](step-4/README.md)
 - [Bagian 5 - Processing Form with external actions (PHP)](step-5/README.md)
+- [Bagian 6 - Processing Form with MySQL Database (PHP)](step-6/README.md)
 
 ### Tentang
 
